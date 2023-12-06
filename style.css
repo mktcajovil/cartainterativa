@@ -12,14 +12,3 @@
 #envelope.clicked {
   animation: none; /* Remove a animação quando clicado */
 }
-
-#carta {
-  display: none;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #fff;
-  padding: 20px;
-  border: 2px solid #000;
-  z-index: 2;
-}
