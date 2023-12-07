@@ -1,20 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartinha Virtual</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>Cartão de Aniversário Animado</title>
+<style>
+/* Estilos para centralizar o envelope e a imagem */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Estilos para o envelope */
+.envelope {
+  width: 150px;
+  height: 100px;
+  cursor: pointer;
+  animation: shake 0.5s infinite; /* Aplica a animação de chacoalhar */
+  background: url('https://images.unsplash.com/photo-1592885375424-571ea45c29fe?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDE5Nzg2MTN8&ixlib=rb-4.0.3&q=85') no-repeat center center;
+  background-size: cover;
+}
+
+/* Animação de chacoalhar */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Estilos para a imagem escondida */
+.imagem {
+  display: none;
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+</style>
 </head>
 <body>
-  <div id="envelope">
-  <svg viewBox="0 0 512 512" width="100" title="envelope">
-  <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z" />
-</svg>
-  <div id="carta">
-    <img src="https://images.unsplash.com/photo-1509666537727-9154b6962292?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDE4NzAxMzR8&ixlib=rb-4.0.3&q=85" alt="Conteúdo da Carta" width="100%" height="100%">
-  </div>
+
+<!-- Container para centralizar o envelope e a imagem -->
+<div class="container">
+
+  <!-- Envelope que o usuário pode clicar -->
+  <div class="envelope" onclick="openEnvelope()"></div>
+
+  <!-- Imagem personalizada que será exibida -->
+  <img src="https://images.unsplash.com/photo-1625727297771-fc9881be6065?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDE5Nzg2Mzl8&ixlib=rb-4.0.3&q=85" alt="Imagem Personalizada" class="imagem">
+
 </div>
-  <script src="script.js"></script>
+
+<script>
+// Função para abrir o envelope e mostrar a imagem
+function openEnvelope() {
+  var envelope = document.querySelector('.envelope');
+  var imagem = document.querySelector('.imagem');
+  envelope.style.animation = 'none'; // Para a animação de chacoalhar
+  envelope.style.opacity = '0'; // Faz o envelope desaparecer suavemente
+  imagem.style.display = 'block'; // Mostra a imagem
+}
+</script>
+
 </body>
 </html>
