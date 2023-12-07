@@ -1,14 +1,1 @@
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25%, 75% { transform: translateX(-5px) rotate(0.5deg); }
-  50% { transform: translateX(5px) rotate(-0.5deg); }
-}
 
-#envelope {
-  position: relative;
-  animation: shake 0.5s ease-in-out infinite; /* Altera para loop infinito */
-}
-
-#envelope.clicked {
-  animation: none; /* Remove a animação quando clicado */
-}
